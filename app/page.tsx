@@ -1,65 +1,108 @@
-import Image from "next/image";
+import { Hero } from "@/components/sections/hero"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { ArrowRight, Calendar, MapPin, PlayCircle } from "lucide-react"
+import Link from "next/link"
+import { FadeIn } from "@/components/fade-in"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex flex-col min-h-screen">
+      <Hero />
+
+      {/* Latest Sermon Highlight */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
+            <FadeIn className="space-y-6">
+              <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm font-medium text-primary">
+                Latest Message
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-serif text-primary">
+                Walking in Divine Purpose
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                Discover how to align your daily walk with God's eternal plan. In this powerful message, Prophet Alia Benjamin breaks down the keys to understanding your unique calling.
+              </p>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                <Button asChild size="lg" className="gap-2">
+                  <Link href="/sermons/latest">
+                    <PlayCircle className="h-5 w-5" />
+                    Watch Now
+                  </Link>
+                </Button>
+                <Button asChild variant="ghost" size="lg" className="gap-2">
+                  <Link href="/sermons">
+                    View Sermon Library <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </FadeIn>
+            
+            {/* Video Placeholder */}
+            <FadeIn delay={0.2} className="relative aspect-video rounded-xl overflow-hidden shadow-xl bg-muted border">
+                <div className="absolute inset-0 flex items-center justify-center bg-black/5 group-hover:bg-black/10 transition-colors">
+                     <PlayCircle className="h-16 w-16 text-primary opacity-80" />
+                </div>
+                <img 
+                    src="https://images.unsplash.com/photo-1543791959-12b3f543281a?q=80&w=2670&auto=format&fit=crop" 
+                    alt="Sermon Thumbnail" 
+                    className="object-cover w-full h-full"
+                />
+            </FadeIn>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Mission Statement */}
+      <section className="py-16 md:py-24 bg-muted/30">
+        <div className="container px-4 md:px-6 text-center space-y-8">
+          <FadeIn>
+             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-serif text-primary">
+                Our Mission
+             </h2>
+             <p className="mx-auto max-w-[800px] text-lg md:text-xl text-muted-foreground leading-relaxed mt-4">
+                "To awaken a generation to the reality of God's love, empowering them to walk in identity, authority, and intimacy with the Holy Spirit."
+             </p>
+          </FadeIn>
+          
+          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 pt-8">
+            <FadeIn delay={0.1}>
+                <Card className="bg-background/60 backdrop-blur-none border-none shadow-sm h-full">
+                    <CardContent className="pt-6 text-center space-y-2">
+                        <div className="mx-auto rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center">
+                            <MapPin className="h-6 w-6 text-primary" />
+                        </div>
+                        <h3 className="text-xl font-bold text-primary">Gather</h3>
+                        <p className="text-muted-foreground">Building authentic community where everyone belongs.</p>
+                    </CardContent>
+                </Card>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+                <Card className="bg-background/60 backdrop-blur-none border-none shadow-sm h-full">
+                    <CardContent className="pt-6 text-center space-y-2">
+                        <div className="mx-auto rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center">
+                            <Calendar className="h-6 w-6 text-primary" />
+                        </div>
+                        <h3 className="text-xl font-bold text-primary">Grow</h3>
+                        <p className="text-muted-foreground">Discipleship that transforms hearts and minds.</p>
+                    </CardContent>
+                </Card>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+                 <Card className="bg-background/60 backdrop-blur-none border-none shadow-sm h-full">
+                    <CardContent className="pt-6 text-center space-y-2">
+                        <div className="mx-auto rounded-full bg-primary/10 w-12 h-12 flex items-center justify-center">
+                            <ArrowRight className="h-6 w-6 text-primary" />
+                        </div>
+                        <h3 className="text-xl font-bold text-primary">Go</h3>
+                        <p className="text-muted-foreground">Equipping believers to impact their world for Christ.</p>
+                    </CardContent>
+                </Card>
+            </FadeIn>
+          </div>
         </div>
-      </main>
+      </section>
     </div>
   );
 }
