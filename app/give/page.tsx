@@ -19,7 +19,7 @@ export default function GivePage() {
     <div className="flex flex-col min-h-screen">
       <section className="bg-primary text-primary-foreground py-20 text-center relative overflow-hidden">
          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
-        <div className="container px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10">
           <FadeIn>
             <Heart className="h-12 w-12 mx-auto mb-6 text-primary-foreground/80" />
             <h1 className="text-4xl font-serif font-bold tracking-tight sm:text-5xl">Giving</h1>
@@ -30,7 +30,7 @@ export default function GivePage() {
         </div>
       </section>
 
-      <section className="py-16 container px-4">
+      <section className="py-16 container mx-auto px-4">
         <div className="grid gap-12 lg:grid-cols-2 max-w-5xl mx-auto items-start">
             
             {/* Donation Form */}

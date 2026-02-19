@@ -12,7 +12,7 @@ export default function Home() {
 
       {/* Latest Sermon Highlight */}
       <section className="py-16 md:py-24 bg-background">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <FadeIn className="space-y-6">
               <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm font-medium text-primary">
@@ -56,7 +56,7 @@ export default function Home() {
 
       {/* Mission Statement */}
       <section className="py-16 md:py-24 bg-muted/30">
-        <div className="container px-4 md:px-6 text-center space-y-8">
+        <div className="container mx-auto px-4 md:px-6 text-center space-y-8">
           <FadeIn>
              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-serif text-primary">
                 Our Mission

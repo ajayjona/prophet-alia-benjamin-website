@@ -9,7 +9,7 @@ export default function EventsPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <section className="bg-muted py-20 text-center">
-        <div className="container px-4">
+        <div className="container mx-auto px-4">
           <FadeIn>
             <h1 className="text-4xl font-serif font-bold tracking-tight text-primary sm:text-5xl">Upcoming Events</h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -20,7 +20,7 @@ export default function EventsPage() {
       </section>
 
       {/* Featured Event */}
-      <section className="py-12 container px-4">
+      <section className="py-12 container mx-auto px-4">
         <FadeIn>
             <div className="relative overflow-hidden rounded-2xl bg-primary text-primary-foreground shadow-xl">
                 <div className="absolute inset-0 z-0">
@@ -55,7 +55,7 @@ export default function EventsPage() {
       </section>
 
       {/* Upcoming Events List */}
-      <section className="py-12 container px-4 max-w-5xl">
+      <section className="py-12 container mx-auto px-4 max-w-5xl">
         <FadeIn>
             <h3 className="text-2xl font-serif font-bold text-primary mb-8">Calendar</h3>
         </FadeIn>

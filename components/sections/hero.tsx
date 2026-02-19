@@ -10,7 +10,7 @@ export function Hero() {
         style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1438232992991-995b7058bbb3?q=80&w=2673&auto=format&fit=crop")' }}
       ></div>
       
-      <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center space-y-6">
+      <div className="container mx-auto relative z-10 px-4 md:px-6 flex flex-col items-center text-center space-y-6">
         <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl font-serif text-primary">
           Welcome Home
         </h1>

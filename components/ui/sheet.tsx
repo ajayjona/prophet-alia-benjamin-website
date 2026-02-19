@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { XIcon } from "lucide-react"
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, XIcon } from "lucide-react"
 import { Dialog as SheetPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
@@ -75,8 +75,11 @@ function SheetContent({
       >
         {children}
         {showCloseButton && (
-          <SheetPrimitive.Close className="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none">
-            <XIcon className="size-4" />
+          <SheetPrimitive.Close className="absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-secondary">
+            {side === "right" && <ChevronRight className="size-6" />}
+            {side === "left" && <ChevronLeft className="size-6" />}
+            {side === "top" && <ChevronUp className="size-6" />}
+            {side === "bottom" && <ChevronDown className="size-6" />}
             <span className="sr-only">Close</span>
           </SheetPrimitive.Close>
         )}

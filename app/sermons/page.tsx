@@ -9,7 +9,7 @@ export default function SermonsPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <section className="bg-muted py-20 text-center">
-        <div className="container px-4">
+        <div className="container mx-auto px-4">
           <FadeIn>
             <h1 className="text-4xl font-serif font-bold tracking-tight text-primary sm:text-5xl">Sermon Library</h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -19,7 +19,7 @@ export default function SermonsPage() {
         </div>
       </section>
 
-      <section className="py-12 container px-4">
+      <section className="py-12 container mx-auto px-4">
         <Tabs defaultValue="all" className="w-full">
           <FadeIn>
             <div className="flex justify-center mb-8">

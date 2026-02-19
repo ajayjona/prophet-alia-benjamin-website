@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -28,8 +29,8 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2 font-serif text-xl font-bold tracking-tight text-primary">
-          <span>P.A.B. Ministries</span>
+        <Link href="/" className="flex items-center space-x-2">
+          <Image src="/logo.png" alt="Prophet Alia Benjamin Ministries" width={180} height={50} priority className="h-12 w-auto object-contain" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -112,10 +113,10 @@ export function Navbar() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background">
-                <div className="flex flex-col gap-6 py-4">
-                    <Link href="/" onClick={handleLinkClick} className="font-serif text-lg font-bold text-primary">
-                        P.A.B. Ministries
+            <SheetContent side="right" className="w-1/2 sm:w-[400px] bg-background">
+                <div className="flex flex-col gap-6 py-4 px-6">
+                    <Link href="/" onClick={handleLinkClick} className="mt-6">
+                        <Image src="/logo.png" alt="Prophet Alia Benjamin Ministries" width={160} height={45} className="h-10 w-auto object-contain" />
                     </Link>
                     <nav className="flex flex-col gap-4">
                         <Link href="/" onClick={handleLinkClick} className="text-lg font-medium transition-colors hover:text-primary">

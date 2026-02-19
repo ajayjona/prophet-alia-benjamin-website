@@ -16,6 +16,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Prophet Alia Benjamin Ministries",
   description: "A Christian Ministry Website",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 import { Navbar } from "@/components/sections/navbar";

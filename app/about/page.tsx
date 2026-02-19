@@ -51,7 +51,7 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen">
       {/* Page Header */}
       <section className="bg-muted py-20 text-center">
-        <div className="container px-4">
+        <div className="container mx-auto px-4">
           <FadeIn>
             <h1 className="text-4xl font-serif font-bold tracking-tight text-primary sm:text-5xl">Who We Are</h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -62,7 +62,7 @@ export default function AboutPage() {
       </section>
 
       {/* History Timeline */}
-      <section className="py-20 container px-4">
+      <section className="py-20 container mx-auto px-4">
         <FadeIn>
             <h2 className="text-3xl font-serif font-bold text-primary mb-12 text-center">Our Journey</h2>
         </FadeIn>
@@ -84,7 +84,7 @@ export default function AboutPage() {
 
       {/* What We Believe */}
       <section className="py-20 bg-muted/30">
-        <div className="container px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-4xl">
           <FadeIn>
               <h2 className="text-3xl font-serif font-bold text-primary mb-12 text-center">What We Believe</h2>
               <Accordion type="single" collapsible className="w-full bg-background rounded-lg shadow-sm border px-6">
@@ -118,7 +118,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-20 container px-4">
+      <section className="py-20 container mx-auto px-4">
         <FadeIn>
             <h2 className="text-3xl font-serif font-bold text-primary mb-12 text-center">Our Leadership</h2>
         </FadeIn>
