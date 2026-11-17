@@ -6,6 +6,8 @@ import {
 } from "@/components/ui/accordion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { FadeIn } from "@/components/fade-in"
+import { VideoCard } from "@/components/video-card"
+import { FEATURED_VIDEO } from "@/lib/videos"
 
 const timelineEvents = [
   {
@@ -59,6 +61,22 @@ export default function AboutPage() {
             </p>
           </FadeIn>
         </div>
+      </section>
+
+      {/* Featured Video Message Section */}
+      <section className="py-16 container mx-auto px-4 max-w-4xl border-b border-border">
+        <FadeIn className="text-center space-y-4 mb-8">
+          <div className="inline-block rounded-lg bg-surface border border-border px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+            Prophetic Message
+          </div>
+          <h2 className="text-3xl font-serif font-bold text-primary">A Word From Prophet Alia Benjamin</h2>
+          <p className="text-muted text-base max-w-xl mx-auto">
+            Hear directly from Prophet Alia Benjamin on the mandate, vision, and heart behind this global ministry.
+          </p>
+        </FadeIn>
+        <FadeIn delay={0.2} className="max-w-2xl mx-auto">
+          <VideoCard video={FEATURED_VIDEO} />
+        </FadeIn>
       </section>
 
       {/* History Timeline */}
