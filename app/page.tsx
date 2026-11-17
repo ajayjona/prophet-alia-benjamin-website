@@ -6,6 +6,7 @@ import Link from "next/link"
 import { FadeIn } from "@/components/fade-in"
 import { VideoCard } from "@/components/video-card"
 import { FEATURED_VIDEO, YOUTUBE_VIDEOS } from "@/lib/videos"
+import { ALBUMS } from "@/lib/albums"
 
 export default function Home() {
   const recentProphecies = YOUTUBE_VIDEOS.slice(1, 4)
@@ -98,6 +99,56 @@ export default function Home() {
             {recentProphecies.map((video, i) => (
               <FadeIn key={video.id} delay={i * 0.1}>
                 <VideoCard video={video} />
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ministry Moments & Photo Albums Preview */}
+      <section className="py-16 md:py-20 bg-background border-b border-border">
+        <div className="container mx-auto px-4 md:px-6">
+          <FadeIn className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div>
+              <div className="inline-block rounded-lg bg-surface-muted border border-border px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary mb-2">
+                Ministry In Pictures
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight font-serif text-primary sm:text-4xl">
+                Photo Albums & Impact
+              </h2>
+              <p className="text-muted text-base max-w-xl mt-2">
+                Witness what God is doing through our fellowship meetings, community outreaches, and youth missions.
+              </p>
+            </div>
+            <Button asChild variant="outline" className="self-start md:self-auto gap-2">
+              <Link href="/gallery">
+                View All Albums ({ALBUMS.reduce((acc, a) => acc + a.photos.length, 0)} Photos) <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </FadeIn>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {ALBUMS.slice(1, 5).map((album, i) => (
+              <FadeIn key={album.id} delay={i * 0.1}>
+                <Link 
+                  href="/gallery" 
+                  className="group block relative aspect-square rounded-xl overflow-hidden border border-border shadow-xs hover:border-accent/70 hover:shadow-md transition-all"
+                >
+                  <img 
+                    src={album.cover} 
+                    alt={album.title} 
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-108"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary-dark/40 to-transparent flex flex-col justify-end p-4">
+                    <span className="text-xs font-semibold text-accent uppercase tracking-wider">
+                      {album.photos.length} Photos
+                    </span>
+                    <h3 className="text-base font-serif font-bold text-surface group-hover:text-accent-light transition-colors">
+                      {album.title}
+                    </h3>
+                  </div>
+                </Link>
               </FadeIn>
             ))}
           </div>

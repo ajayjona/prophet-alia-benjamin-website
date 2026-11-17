@@ -21,16 +21,16 @@ export function Footer() {
   return (
     <footer className="w-full bg-primary-dark text-background border-t border-border/30 pt-16 pb-12">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           <div className="space-y-4">
             <h3 className="text-xl font-serif font-bold text-accent">Prophet Alia Benjamin Ministries</h3>
             <p className="text-sm text-surface-muted/90 max-w-xs leading-relaxed">
               Walking in grace, led by the Spirit. Join us online and at our announced fellowship gatherings.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
-              <a 
-                href="https://youtube.com/@prophetaliabenjamin?si=kFG6crGG6otdUVlU" 
-                target="_blank" 
+              <a
+                href="https://youtube.com/@prophetaliabenjamin?si=kFG6crGG6otdUVlU"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube Channel"
                 className="text-surface-muted/80 hover:text-accent transition-colors p-1.5 rounded-md hover:bg-surface-muted/10"
@@ -38,9 +38,9 @@ export function Footer() {
                 <Youtube className="h-5 w-5" />
                 <span className="sr-only">YouTube</span>
               </a>
-              <a 
-                href="https://www.tiktok.com/@prophetaliabenjamin?_r=1&_t=ZS-9A9IgNa0PBJ" 
-                target="_blank" 
+              <a
+                href="https://www.tiktok.com/@prophetaliabenjamin?_r=1&_t=ZS-9A9IgNa0PBJ"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok Profile"
                 className="text-surface-muted/80 hover:text-accent transition-colors p-1.5 rounded-md hover:bg-surface-muted/10"
@@ -48,9 +48,9 @@ export function Footer() {
                 <TikTokIcon className="h-5 w-5" />
                 <span className="sr-only">TikTok</span>
               </a>
-              <a 
-                href="https://www.instagram.com/prophet_aliabenjamin?stkn=bWVjbGtwbTVncGNk" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/prophet_aliabenjamin?stkn=bWVjbGtwbTVncGNk"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram Profile"
                 className="text-surface-muted/80 hover:text-accent transition-colors p-1.5 rounded-md hover:bg-surface-muted/10"
@@ -58,9 +58,9 @@ export function Footer() {
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a 
-                href="https://x.com/AliaProphet" 
-                target="_blank" 
+              <a
+                href="https://x.com/AliaProphet"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X Profile"
                 className="text-surface-muted/80 hover:text-accent transition-colors p-1.5 rounded-md hover:bg-surface-muted/10"
@@ -68,9 +68,9 @@ export function Footer() {
                 <XIcon className="h-4 w-4 mt-0.5" />
                 <span className="sr-only">X</span>
               </a>
-              <a 
-                href="https://www.facebook.com/ProphetAliaBenjamin" 
-                target="_blank" 
+              <a
+                href="https://www.facebook.com/ProphetAliaBenjamin"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook Page"
                 className="text-surface-muted/80 hover:text-accent transition-colors p-1.5 rounded-md hover:bg-surface-muted/10"
@@ -78,9 +78,9 @@ export function Footer() {
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </a>
-              <a 
-                href="https://wa.me/256780685120" 
-                target="_blank" 
+              <a
+                href="https://wa.me/256780685120"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp Contact"
                 className="text-surface-muted/80 hover:text-accent transition-colors p-1.5 rounded-md hover:bg-surface-muted/10"
@@ -90,16 +90,16 @@ export function Footer() {
               </a>
             </div>
           </div>
-          
+
           <div>
             <h4 className="font-semibold mb-4 text-surface tracking-wide">Quick Links</h4>
             <ul className="space-y-2.5 text-sm">
               <li><Link href="/about" className="text-surface-muted/80 hover:text-accent transition-colors">About Prophet Alia</Link></li>
               <li>
-                <a 
-                  href="https://youtube.com/@prophetaliabenjamin?si=kFG6crGG6otdUVlU" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://youtube.com/@prophetaliabenjamin?si=kFG6crGG6otdUVlU"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-surface-muted/80 hover:text-accent transition-colors flex items-center gap-1.5"
                 >
                   <Youtube className="h-4 w-4 text-accent" />
@@ -108,57 +108,21 @@ export function Footer() {
               </li>
               <li><Link href="/sermons" className="text-surface-muted/80 hover:text-accent transition-colors">Prophecies & Teachings</Link></li>
               <li><Link href="/events" className="text-surface-muted/80 hover:text-accent transition-colors">Fellowship Updates</Link></li>
+              <li><Link href="/gallery" className="text-surface-muted/80 hover:text-accent transition-colors">Photo Albums & Gallery</Link></li>
               <li><Link href="/give" className="text-surface-muted/80 hover:text-accent transition-colors">Partner / Give</Link></li>
-            </ul>
-          </div>
-
-          <div>
-             <h4 className="font-semibold mb-4 text-surface tracking-wide">Connect Online</h4>
-            <ul className="space-y-2.5 text-sm">
-              <li>
-                <a href="https://youtube.com/@prophetaliabenjamin?si=kFG6crGG6otdUVlU" target="_blank" rel="noopener noreferrer" className="text-surface-muted/80 hover:text-accent transition-colors">
-                  YouTube Broadcasts
-                </a>
-              </li>
-              <li>
-                <a href="https://www.tiktok.com/@prophetaliabenjamin?_r=1&_t=ZS-9A9IgNa0PBJ" target="_blank" rel="noopener noreferrer" className="text-surface-muted/80 hover:text-accent transition-colors">
-                  TikTok Updates
-                </a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/prophet_aliabenjamin?stkn=bWVjbGtwbTVncGNk" target="_blank" rel="noopener noreferrer" className="text-surface-muted/80 hover:text-accent transition-colors">
-                  Instagram Words
-                </a>
-              </li>
-              <li>
-                <a href="https://x.com/AliaProphet" target="_blank" rel="noopener noreferrer" className="text-surface-muted/80 hover:text-accent transition-colors">
-                  X (Twitter) Feed
-                </a>
-              </li>
-              <li>
-                <a href="https://www.facebook.com/ProphetAliaBenjamin" target="_blank" rel="noopener noreferrer" className="text-surface-muted/80 hover:text-accent transition-colors">
-                  Facebook Community
-                </a>
-              </li>
             </ul>
           </div>
 
           <div className="space-y-4">
             <h4 className="font-semibold mb-4 text-surface tracking-wide">Contact Us</h4>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2.5 text-surface-muted/90">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-accent" />
-                <span>
-                  <strong>Global Online Ministry</strong><br/>
-                  Fellowship venues announced per service
-                </span>
-              </li>
+
               <li className="flex items-center gap-2.5 text-surface-muted/90">
                 <MessageCircle className="h-4 w-4 shrink-0 text-accent" />
-                <a 
-                  href="https://wa.me/256780685120" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://wa.me/256780685120"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-accent transition-colors"
                 >
                   +256 780 685 120 (WhatsApp)
@@ -166,8 +130,8 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2.5 text-surface-muted/90">
                 <Mail className="h-4 w-4 shrink-0 text-accent" />
-                <a 
-                  href="mailto:prophetaliabenjamin@gmail.com" 
+                <a
+                  href="mailto:prophetaliabenjamin@gmail.com"
                   className="hover:text-accent transition-colors"
                 >
                   prophetaliabenjamin@gmail.com
@@ -176,7 +140,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        
+
         <div className="mt-12 border-t border-surface-muted/20 pt-8 text-center text-xs text-surface-muted/70">
           <p>&copy; {new Date().getFullYear()} Prophet Alia Benjamin Ministries. All rights reserved.</p>
         </div>

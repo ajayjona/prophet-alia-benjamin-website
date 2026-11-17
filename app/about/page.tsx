@@ -32,7 +32,7 @@ const leaders = [
     name: "Prophet Alia Benjamin",
     role: "Prophet & Spiritual Leader",
     bio: "Visionary leader passionate about declaring the prophetic Word of the Lord, equipping believers, and awakening nations.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2576&auto=format&fit=crop"
+    image: "/prophet/prophet_2.jpeg"
   },
   {
     name: "Pastor Sarah James",

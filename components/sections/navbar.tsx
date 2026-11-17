@@ -71,6 +71,14 @@ export function Navbar() {
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
+                  <Link href="/gallery" className={navigationMenuTriggerStyle()}>
+                    Albums & Gallery
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
                   <a 
                     href="https://youtube.com/@prophetaliabenjamin?si=kFG6crGG6otdUVlU" 
                     target="_blank" 
@@ -123,6 +131,9 @@ export function Navbar() {
                         </Link>
                         <Link href="/events" onClick={handleLinkClick} className="text-lg font-medium transition-colors hover:text-primary">
                             Fellowships & Events
+                        </Link>
+                        <Link href="/gallery" onClick={handleLinkClick} className="text-lg font-medium transition-colors hover:text-primary">
+                            Photo Albums & Gallery
                         </Link>
                         <a 
                             href="https://youtube.com/@prophetaliabenjamin?si=kFG6crGG6otdUVlU" 
