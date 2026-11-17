@@ -22,9 +22,9 @@ export const ALBUMS: Album[] = [
     cover: "/prophet/prophet_2.jpeg",
     photos: [
       { src: "/prophet/prophet_2.jpeg", alt: "Prophet Alia Benjamin", albumId: "prophet" },
-      { src: "/prophet/no_bg-prophet.jpeg", alt: "Prophet Alia Benjamin Portrait", albumId: "prophet" },
-      { src: "/prophet/no_bg-prophet2.jpeg", alt: "Prophet Alia Benjamin Ministering", albumId: "prophet" },
-      { src: "/prophet/banner.jpeg", alt: "Prophet Alia Benjamin Banner", albumId: "prophet" }
+      { src: "/prophet/prophet_cutout.png", alt: "Prophet Alia Benjamin Portrait", albumId: "prophet" },
+      { src: "/prophet/prophet_cutout_mic.png", alt: "Prophet Alia Benjamin Ministering", albumId: "prophet" },
+      { src: "/prophet/banner.jpeg", alt: "Prophet Alia Benjamin Studio Banner", albumId: "prophet" }
     ]
   },
   {
