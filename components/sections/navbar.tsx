@@ -26,7 +26,7 @@ export function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-surface/95 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
@@ -54,29 +54,9 @@ export function Navbar() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Ministries</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-2 bg-popover">
-                    <ListItem href="/ministries/kids" title="Kids Ministry">
-                      Nurturing faith in our youngest generation with joy.
-                    </ListItem>
-                    <ListItem href="/ministries/youth" title="Youth">
-                      Empowering teens to lead and serve with passion.
-                    </ListItem>
-                    <ListItem href="/ministries/adults" title="Adults">
-                      Deepening discipleship and community connection.
-                    </ListItem>
-                    <ListItem href="/ministries/outreach" title="Outreach">
-                      Extending love and service to our local community.
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Link href="/sermons" className={navigationMenuTriggerStyle()}>
-                    Sermons
+                    Prophecies & Teachings
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -84,8 +64,21 @@ export function Navbar() {
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Link href="/events" className={navigationMenuTriggerStyle()}>
-                    Events
+                    Fellowship & Events
                   </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <a 
+                    href="https://youtube.com/@prophetaliabenjamin?si=kFG6crGG6otdUVlU" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={cn(navigationMenuTriggerStyle(), "text-accent font-semibold hover:text-accent-light")}
+                  >
+                    YouTube
+                  </a>
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
@@ -99,8 +92,8 @@ export function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
-            <Link href="/give">Give</Link>
+          <Button asChild>
+            <Link href="/give">Partner / Give</Link>
           </Button>
         </div>
 
@@ -108,12 +101,12 @@ export function Navbar() {
         <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button variant="ghost" size="icon" className="md:hidden text-primary hover:bg-surface-muted">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-1/2 sm:w-[400px] bg-background">
+            <SheetContent side="right" className="w-3/4 sm:w-[400px] bg-surface border-l border-border text-foreground">
                 <div className="flex flex-col gap-6 py-4 px-6">
                     <Link href="/" onClick={handleLinkClick} className="mt-6">
                         <Image src="/logo.png" alt="Prophet Alia Benjamin Ministries" width={160} height={45} className="h-10 w-auto object-contain" />
@@ -125,26 +118,26 @@ export function Navbar() {
                         <Link href="/about" onClick={handleLinkClick} className="text-lg font-medium transition-colors hover:text-primary">
                             About
                         </Link>
-                        <div className="flex flex-col gap-2">
-                             <span className="text-lg font-medium text-muted-foreground">Ministries</span>
-                             <div className="pl-4 flex flex-col gap-2 border-l-2 border-muted ml-2">
-                                <Link href="/ministries/kids" onClick={handleLinkClick} className="text-base text-foreground/80 hover:text-primary">Kids</Link>
-                                <Link href="/ministries/youth" onClick={handleLinkClick} className="text-base text-foreground/80 hover:text-primary">Youth</Link>
-                                <Link href="/ministries/adults" onClick={handleLinkClick} className="text-base text-foreground/80 hover:text-primary">Adults</Link>
-                                <Link href="/ministries/outreach" onClick={handleLinkClick} className="text-base text-foreground/80 hover:text-primary">Outreach</Link>
-                             </div>
-                        </div>
                         <Link href="/sermons" onClick={handleLinkClick} className="text-lg font-medium transition-colors hover:text-primary">
-                            Sermons
+                            Prophecies & Teachings
                         </Link>
                         <Link href="/events" onClick={handleLinkClick} className="text-lg font-medium transition-colors hover:text-primary">
-                            Events
+                            Fellowships & Events
                         </Link>
+                        <a 
+                            href="https://youtube.com/@prophetaliabenjamin?si=kFG6crGG6otdUVlU" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            onClick={handleLinkClick} 
+                            className="text-lg font-medium transition-colors text-accent hover:text-accent-light"
+                        >
+                            Watch on YouTube
+                        </a>
                         <Link href="/contact" onClick={handleLinkClick} className="text-lg font-medium transition-colors hover:text-primary">
-                            Contact
+                            Contact & WhatsApp
                         </Link>
-                         <Button asChild className="mt-4 w-full bg-primary text-primary-foreground">
-                            <Link href="/give" onClick={handleLinkClick}>Give Online</Link>
+                         <Button asChild className="mt-4 w-full">
+                            <Link href="/give" onClick={handleLinkClick}>Partner / Give Online</Link>
                         </Button>
                     </nav>
                 </div>
@@ -167,13 +160,13 @@ const ListItem = React.forwardRef<
           ref={ref}
           href={props.href as string}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-surface-muted hover:text-primary focus:bg-surface-muted focus:text-primary",
             className
           )}
           {...props}
         >
           <div className="text-sm font-medium leading-none font-serif text-primary">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <p className="line-clamp-2 text-sm leading-snug text-muted">
             {children}
           </p>
         </Link>

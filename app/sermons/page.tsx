@@ -1,20 +1,32 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Calendar, Download, Headphones, PlayCircle, Video } from "lucide-react"
+import { Calendar, Download, Headphones, PlayCircle, Video, Youtube } from "lucide-react"
 import Link from "next/link"
 import { FadeIn } from "@/components/fade-in"
 
 export default function SermonsPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <section className="bg-muted py-20 text-center">
-        <div className="container mx-auto px-4">
+      <section className="bg-surface-muted/40 border-b border-border py-20 text-center">
+        <div className="container mx-auto px-4 space-y-6">
           <FadeIn>
-            <h1 className="text-4xl font-serif font-bold tracking-tight text-primary sm:text-5xl">Sermon Library</h1>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                Explore our collection of life-changing messages and teachings.
+            <h1 className="text-4xl font-serif font-bold tracking-tight text-primary sm:text-5xl">Prophecies & Teachings</h1>
+            <p className="mt-4 text-lg text-muted max-w-2xl mx-auto leading-relaxed">
+                Watch all latest prophetic declarations, Sunday services, and spiritual teachings directly on our official YouTube channel.
             </p>
+            <div className="pt-4 flex justify-center">
+              <Button asChild size="lg" className="font-bold gap-2 shadow-sm">
+                <a 
+                  href="https://youtube.com/@prophetaliabenjamin?si=kFG6crGG6otdUVlU" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Youtube className="h-5 w-5" />
+                  Subscribe & Watch on YouTube
+                </a>
+              </Button>
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -67,45 +79,59 @@ export default function SermonsPage() {
 }
 
 function SermonCard({ sermon }: { sermon: any }) {
+    const youtubeChannelUrl = "https://youtube.com/@prophetaliabenjamin?si=kFG6crGG6otdUVlU"
+
     return (
-        <Card className="overflow-hidden border-none shadow-md flex flex-col h-full group">
-            <div className="aspect-video relative bg-muted overflow-hidden">
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10" />
+        <Card className="overflow-hidden border border-border shadow-xs hover:border-accent/60 transition-colors flex flex-col h-full group bg-surface">
+            <a 
+              href={youtubeChannelUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="aspect-video relative bg-surface-muted overflow-hidden block"
+            >
+                <div className="absolute inset-0 bg-primary-dark/20 group-hover:bg-primary-dark/10 transition-colors z-10 flex items-center justify-center">
+                    <PlayCircle className="h-12 w-12 text-accent opacity-90 group-hover:scale-110 transition-transform drop-shadow-md" />
+                </div>
                 <img 
                     src={sermon.image} 
                     alt={sermon.title} 
                     className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105" 
                 />
-                <div className="absolute bottom-3 right-3 z-20 bg-black/60 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                    <Video className="h-3 w-3" /> {sermon.duration}
+                <div className="absolute bottom-3 right-3 z-20 bg-primary-dark/80 text-surface text-xs px-2 py-1 rounded flex items-center gap-1 font-medium">
+                    <Video className="h-3 w-3 text-accent" /> {sermon.duration}
                 </div>
-            </div>
+            </a>
             <CardHeader className="p-4 space-y-2">
-                <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {sermon.date}</span>
-                    <span className="bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium">{sermon.category}</span>
+                <div className="flex items-center justify-between text-xs text-muted">
+                    <span className="flex items-center gap-1"><Calendar className="h-3 w-3 text-accent" /> {sermon.date}</span>
+                    <span className="bg-surface-muted border border-border text-primary px-2 py-0.5 rounded-full font-semibold">{sermon.category}</span>
                 </div>
-                <h3 className="font-serif font-bold text-lg leading-tight group-hover:text-primary transition-colors">
-                    <Link href={`/sermons/${sermon.slug}`}>{sermon.title}</Link>
+                <h3 className="font-serif font-bold text-lg leading-tight group-hover:text-primary transition-colors text-foreground">
+                    <a href={youtubeChannelUrl} target="_blank" rel="noopener noreferrer">
+                      {sermon.title}
+                    </a>
                 </h3>
-                <p className="text-sm text-foreground/80 font-medium">By {sermon.speaker}</p>
+                <p className="text-sm text-primary font-medium">By {sermon.speaker}</p>
             </CardHeader>
             <CardContent className="p-4 pt-0 flex-1">
-                <p className="text-sm text-muted-foreground line-clamp-2">{sermon.description}</p>
+                <p className="text-sm text-muted line-clamp-2 leading-relaxed">{sermon.description}</p>
             </CardContent>
-            <CardFooter className="p-4 border-t bg-muted/20 flex justify-between items-center gap-2">
-                 <Button variant="ghost" size="sm" className="h-8 gap-1.5 text-xs">
-                    <PlayCircle className="h-3.5 w-3.5" /> Watch
+            <CardFooter className="p-4 border-t border-border bg-surface-muted/20 flex justify-between items-center gap-2">
+                 <Button asChild size="sm" className="h-8 gap-1.5 text-xs font-semibold">
+                    <a href={youtubeChannelUrl} target="_blank" rel="noopener noreferrer">
+                      <PlayCircle className="h-3.5 w-3.5" /> Watch on YouTube
+                    </a>
                  </Button>
                  <div className="flex gap-1">
-                    <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-primary">
-                        <Headphones className="h-4 w-4" />
-                        <span className="sr-only">Listen</span>
-                    </Button>
-                    <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-primary">
-                        <Download className="h-4 w-4" />
-                        <span className="sr-only">Notes</span>
-                    </Button>
+                    <a 
+                      href={youtubeChannelUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="p-1.5 rounded-md text-muted hover:text-accent transition-colors"
+                      aria-label="Open on YouTube"
+                    >
+                      <Youtube className="h-4 w-4" />
+                    </a>
                  </div>
             </CardFooter>
         </Card>
